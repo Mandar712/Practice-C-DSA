@@ -1,3 +1,4 @@
+// Binary Search 
 #include <iostream>
 int binary_search(int arr[],int num,int tofind);
 
@@ -17,7 +18,7 @@ int binary_search(int arr[],int num,int tofind){
     int mid;
     while(start<=end){
         mid = (start + end)/2;
-        if (arr[mid] == tofind){ // {1,2,3,4,5,6,7,8}
+        if (arr[mid] == tofind){
             return mid;
         }
         else if (arr[mid]>tofind)
