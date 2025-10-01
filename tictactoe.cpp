@@ -18,6 +18,13 @@ int main(){
     while(running){
         playermove(spaces,player);
         drawboard(spaces);
+        if(checkwinner(spaces,player,computer)){
+            running = false;
+            break;
+        }
+
+        computermove(spaces,computer);
+        drawboard(spaces);
     }
 
     return 0;
@@ -49,8 +56,18 @@ void playermove(char *spaces,char player){
     }while(!number>0 || !number <8);
 }
 void computermove(char *spaces, char computer){
+    int number;
+    srand(time(0));
 
+    while(true){
+        number = rand()%9;
+        if(spaces[number] == ' '){
+            spaces[number] = computer;
+            break;
+        }
+    }
 }
+
 bool checkwinner(char *spaces, char player, char computer){
     return 0;
 }
