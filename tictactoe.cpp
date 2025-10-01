@@ -15,6 +15,11 @@ int main(){
 
     drawboard(spaces);
 
+    while(running){
+        playermove(spaces,player);
+        drawboard(spaces);
+    }
+
     return 0;
 }
 
@@ -32,7 +37,16 @@ void drawboard(char *spaces){
 
 }
 void playermove(char *spaces,char player){
-
+    int number;
+    do{
+        std::cout << "Enter a empty spot to place your marker : ";
+        std::cin >> number;
+        number--;
+        if(spaces[number] == ' '){
+            spaces[number] = player;
+            break;
+        }
+    }while(!number>0 || !number <8);
 }
 void computermove(char *spaces, char computer){
 
