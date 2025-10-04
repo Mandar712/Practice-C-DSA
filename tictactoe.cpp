@@ -38,6 +38,7 @@ int main(){
             break;
         }
     }
+    std::cout << "Thanks for playing the game!! :)"<< std::endl;
     return 0;
 }
 
