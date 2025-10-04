@@ -22,15 +22,22 @@ int main(){
             running = false;
             break;
         }
-
+        else if(checktie(spaces)){
+            running = false;
+            break;
+        }
+        
         computermove(spaces,computer);
         drawboard(spaces);
         if(checkwinner(spaces,player,computer)){
             running = false;
             break;
         } 
+        else if(checktie(spaces)){
+            running = false;
+            break;
+        }
     }
-
     return 0;
 }
 
@@ -102,5 +109,11 @@ bool checkwinner(char *spaces, char player, char computer){
     return true;
 }
 bool checktie(char *spaces){
-    return 0;
+    for(int i = 0; i < 9 ; i++){
+        if(spaces[i] == ' '){
+            return false;
+        }
+    }
+    std::cout << "It's a TIE!\n";
+    return true;
 }
